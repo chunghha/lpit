@@ -1,0 +1,5 @@
+.vscode
+node_modules
+platforms
+www/bundled.game.js
+www/vendor.phaser.js

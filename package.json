@@ -1,0 +1,41 @@
+{
+    "name": "lpit",
+    "version": "0.0.1",
+    "description": "Learn Phaser in TypeScript",
+    "repository": {
+        "url": "https://github.com/chunghha/lpit"
+    },
+    "watch": {
+        "build": {
+            "patterns": [
+                "src"
+            ],
+            "extensions": "ts"
+        }
+    },
+    "scripts": {
+        "build": "webpack",
+        "debug": "webpack-dev-server",
+        "electron": "electron www",
+        "package": "electron-packager --overwrite www"
+    },
+    "author": "Chris Ha",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^1.7.3",
+        "electron-packager": "^8.7.1",
+        "expose-loader": "^0.7.3",
+        "file-loader": "^0.11.2",
+        "nodemon": "^1.11.0",
+        "source-map-loader": "^0.2.1",
+        "ts-loader": "^2.1.0",
+        "tslint": "^5.4.3",
+        "typescript": "^2.4.0",
+        "webpack": "^2.6.1",
+        "webpack-dev-server": "^2.4.5",
+        "webpack-livereload-plugin": "^0.11.0"
+    },
+    "dependencies": {
+        "phaser-ce": "^2.8.0"
+    }
+}
