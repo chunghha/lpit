@@ -2,6 +2,7 @@
 
 
 1. Project Setup / Display Phaser.Text.
+2. Set Stage background color.
 
 
 *Credit to*
