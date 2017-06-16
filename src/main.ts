@@ -1,5 +1,7 @@
 import * as Phaser from 'phaser-ce';
 
+import {setStageBackgroundColor} from './util';
+
 class Main {
   game: Phaser.Game;
   text: Phaser.Text;
@@ -19,6 +21,12 @@ class Main {
     };
     this.text = this.game.add.text(0, 0, hello, style);
     this.text.setTextBounds(0, 0, 800, 600);
+
+    // initial background color with space cadet.
+    this.game.stage.backgroundColor = '#1d2951';
+    // add pointer down listener to set stage background color.
+    this.game.input.onDown.add(
+        stage => setStageBackgroundColor(this.game.stage), this);
   }
 }
 
