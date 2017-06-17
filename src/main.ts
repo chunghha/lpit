@@ -1,6 +1,6 @@
 import * as Phaser from 'phaser-ce';
 
-import {setStageBackgroundColor} from './util';
+import {decreaseTextAlpha, increaseTextAlpha, setStageBackgroundColor} from './util';
 
 class Main {
   game: Phaser.Game;
@@ -27,6 +27,13 @@ class Main {
     // add pointer down listener to set stage background color.
     this.game.input.onDown.add(
         stage => setStageBackgroundColor(this.game.stage), this);
+
+    // change alpha of text by J/K keys.
+    this.text.alpha = 1;
+    this.game.input.keyboard.addKey(Phaser.Keyboard.J)
+        .onDown.add(text => decreaseTextAlpha(this.text), this);
+    this.game.input.keyboard.addKey(Phaser.Keyboard.K)
+        .onDown.add(text => increaseTextAlpha(this.text), this);
   }
 }
 
