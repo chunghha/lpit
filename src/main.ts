@@ -24,6 +24,7 @@ class Main {
         boundsAlignV: 'middle'
       };
       this.text = this.game.add.text(0, 0, hello, style);
+      this.text.setShadow(-5, 7, 'rgba(0, 0, 0, 0.7)', 0);
       this.text.setTextBounds(0, 0, 800, 600);
 
       // change alpha of text by J/K keys.
