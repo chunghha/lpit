@@ -1,7 +1,9 @@
 import * as Phaser from 'phaser-ce';
 import * as WebFont from 'webfontloader';
 
-import {decreaseTextAlpha, increaseTextAlpha, setStageBackgroundColor} from './util';
+import {decreaseTextAlpha, increaseTextAlpha} from './utils/alpha';
+import {setStageBackgroundColor} from './utils/background';
+import {moveText, stopText} from './utils/physics';
 
 class Main {
   game: Phaser.Game;
@@ -34,10 +36,11 @@ class Main {
       this.game.input.keyboard.addKey(Phaser.Keyboard.K)
           .onDown.add(text => increaseTextAlpha(this.text), this);
 
-      this.game.physics.arcade.enable(this.text);
-      this.text.body.velocity.setTo(200, 200);
-      this.text.body.collideWorldBounds = true;
-      this.text.body.bounce.set(1);
+      // start/stop moving of text by H/L keys.
+      this.game.input.keyboard.addKey(Phaser.Keyboard.H)
+          .onDown.add((game, text) => moveText(this.game, this.text), this);
+      this.game.input.keyboard.addKey(Phaser.Keyboard.L)
+          .onDown.add(text => stopText(this.text), this);
     });
 
     // initial background color with space cadet.
