@@ -33,6 +33,11 @@ class Main {
           .onDown.add(text => decreaseTextAlpha(this.text), this);
       this.game.input.keyboard.addKey(Phaser.Keyboard.K)
           .onDown.add(text => increaseTextAlpha(this.text), this);
+
+      this.game.physics.arcade.enable(this.text);
+      this.text.body.velocity.setTo(200, 200);
+      this.text.body.collideWorldBounds = true;
+      this.text.body.bounce.set(1);
     });
 
     // initial background color with space cadet.
