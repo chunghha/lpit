@@ -21,8 +21,7 @@ module.exports = {
     vendor: ['pixi', 'p2', 'phaser']
   },
   output: {
-    path: path.resolve(__dirname, 'www'),
-    filename: 'bundled.game.js'
+    path: path.resolve(__dirname, 'www')
   },
   devtool: 'inline-source-map',
   module: {
@@ -35,7 +34,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.phaser.js' }),
     new webpack.HotModuleReplacementPlugin(),
     new LiveReloadPlugin()
   ],
